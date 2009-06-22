@@ -5,11 +5,18 @@ Requires at least: WPMu 2.7.1, BuddyPress 1.0
 Tested up to: WPMu 2.7.1, BuddyPress 1.0.1
 Stable tag: trunk
 
-Allows users to override the automatic links in their BuddyPress profiles by enclosing tags in square brackets.
+Allows users to take control of the way that the links in their Buddypress profiles are handled.
 
 == Description ==
 
-BuddyPress has a built in feature that automatically turns words and phrases in the fields of a user profile into clickable links to other users with the same phrases in their own profiles. This plugin allows users to override this automatic filter, by enclosing their desired tags in square brackets.
+Out of the box, BuddyPress automatically turns some words and phrases in the fields of a user's profile into links that, when clicked, search the user's community for other profiles containing those phrases. When activated, this plugin allows users and administrators to have more control over these links, in the following ways:
+
+1) By using square brackets in a profile field, users can specify which words or phrases in their profile turn into links. For example: under Interests, I might list "Cartoons about dogs". By default, Buddypress will turn the entire phrase into a link that searches the community for others who like cartoons about dogs. If I instead type "[Cartoons] about [dogs]", then the two words in brackets will turn into independent links.
+
+2) Administrators can specify certain profile fields that will not turn into links at all. The standard setting for the plugin is that fields labeled 'Phone', 'IM', and 'Skype ID' will not become linkable (it doesn't make much sense to search a community for what should be a unique handle, after all). See custom-profile-filters-for-buddypress.php to configure this setting.
+
+3) Administrators can specify certain profile fields that link to social networking profiles. If I enter my Twitter handle 'boonebgorges' into a field labeled 'Twitter', for example, this plugin will bypass the default link to a BuddyPress search on 'boonebgorges' and instead link to http://twitter.com/boonebgorges. See custom-profile-filters-for-buddypress.php to configure this setting.
+
 
 This plugin was created as part of the CUNY Academic Commons of the City University of New York. See http://commons.gc.cuny.edu to learn more about this bodacious project.
 
@@ -18,6 +25,7 @@ This plugin was created as part of the CUNY Academic Commons of the City Univers
 
 1. Upload `custom-profile-filters-for-buddypress.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress (/wp-admin/)
+1. Edit custom-profile-filters-for-buddypress.php to configure.
 
 
 
