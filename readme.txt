@@ -1,5 +1,5 @@
 === Custom Profile Filters for BuddyPress ===
-Contributors: boonebgorges, cuny.academic.commons
+Contributors: boonebgorges, cuny-academic-commons
 Tags: buddypress, profile, filter
 Requires at least: WPMu 2.7.1, BuddyPress 1.0
 Tested up to: WPMu 2.7.1, BuddyPress 1.0.1
