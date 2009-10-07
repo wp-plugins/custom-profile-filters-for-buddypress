@@ -49,7 +49,7 @@ function xprofile_filter_link_profile_data_cac( $field_value, $field_type = 'tex
 	elseif ( isset ( $social_networking_fields[$bp_this_field_name] ) ) {
 		$sp = strpos ( $field_value, $social_networking_fields[$bp_this_field_name] );
 		if ( $sp === false ) {
-			$field_value = 'http://' . $social_networking_fields[$bp_this_field_name] . $field_value;
+			$field_value = '<a href="http://' . $social_networking_fields[$bp_this_field_name] . $field_value . '">' . $field_value . '</a>';
 			}
 		return $field_value;
 		}
