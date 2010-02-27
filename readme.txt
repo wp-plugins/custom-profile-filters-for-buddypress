@@ -2,7 +2,7 @@
 Contributors: boonebgorges, cuny-academic-commons
 Tags: buddypress, profile, filter
 Requires at least: WPMu 2.7.1, BuddyPress 1.0
-Tested up to: WPMu 2.7.1, BuddyPress 1.0.1
+Tested up to: WPMu 2.9.1.1, BuddyPress 1.2
 Stable tag: trunk
 
 Allows users to take control of the way that the links in their Buddypress profiles are handled.
@@ -15,7 +15,7 @@ Out of the box, BuddyPress automatically turns some words and phrases in the fie
 
 2) Administrators can specify certain profile fields that will not turn into links at all. The standard setting for the plugin is that fields labeled 'Phone', 'IM', and 'Skype ID' will not become linkable (it doesn't make much sense to search a community for what should be a unique handle, after all). See custom-profile-filters-for-buddypress.php to configure this setting.
 
-3) Administrators can specify certain profile fields that link to social networking profiles. If I enter my Twitter handle 'boonebgorges' into a field labeled 'Twitter', for example, this plugin will bypass the default link to a BuddyPress search on 'boonebgorges' and instead link to http://twitter.com/boonebgorges. See custom-profile-filters-for-buddypress.php to configure this setting.
+3) Administrators can specify certain profile fields that link to social networking profiles. If I enter my Twitter handle 'boonebgorges' into a field labeled 'Twitter', for example, this plugin will bypass the default link to a BuddyPress search on 'boonebgorges' and instead link to http://twitter.com/boonebgorges. See custom-profile-filters-for-buddypress-bp-functions.php to configure this setting.
 
 
 This plugin was created as part of the CUNY Academic Commons of the City University of New York. See http://commons.gc.cuny.edu to learn more about this bodacious project.
@@ -38,3 +38,9 @@ You might want to insert a small explanation into your BP profile edit template 
 "Words or phrases in your profile can be linked to the profiles of other members that contain the same phrases. To specify which words or phrases should be linked, add square brackets: e.g. "I enjoy [English literature] and [technology]." If you do not specify anything, phrases will be chosen automatically."
 
 Future features include: admin tab with toggle switch; ability to tweak BP's automatic profile filter (e.g. to parse semi-colon separated lists in addition to commas).
+
+== Changelog ==
+
+= 0.3 =
+* Conforms to BP 1.2 standards for loading order
+* Most functionality moved to proper filters in order to inherit BP native code
