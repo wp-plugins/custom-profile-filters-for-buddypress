@@ -1,29 +1,7 @@
 <?php
 
-$no_link_fields = array( // Enter the field ID of any field that you want to appear as plain, non-clickable text. Don't forget to separate with commas.
 
-	'Skype ID ' 	,
-	'Phone' 	,
-	'IM'		
-	
-	);
-
-$social_networking_fields = array( // Enter the field ID of any field that prompts for the username to a social networking site, followed by the URL format for profiles on that site, with *** in place of the user name. Thus, since the URL for the profile of awesometwitteruser is twitter.com/awesometwitteruser, you should enter 'Twitter' => 'twitter.com/***'. Don't forget: 1) Leave out the 'http://', 2) Separate items with commas
-
-	'Twitter' =>'twitter.com/***' ,
-	'Delicious ID' => 'delicious.com/***' ,
-	'YouTube ID ' => 'youtube.com/***' ,
-	'Flickr ID ' =>'flickr.com/***' ,
-	'FriendFeed ID' => 'friendfeed.com/***'
-
-	);
-
-
-// You shouldn't need to touch anything below this line.
-
-
-
-function cpfb_add_brackets( $field_value, $value, $id ) {
+function cpfb_add_brackets( $field_value ) {
 
 	if ( strpos( $field_value, '[' ) | strpos( $field_value, ']' ) ) { // If there is a bracket in a field, this block overrides the auto-linking
 		$field_value = strip_tags( $field_value );
@@ -36,13 +14,13 @@ function cpfb_add_brackets( $field_value, $value, $id ) {
 	
 	return $field_value;
 }
-add_filter( 'bp_get_the_profile_field_value', 'cpfb_add_brackets', 999 );
+add_filter( 'bp_get_the_profile_field_value', 'cpfb_add_brackets', 999, 1 );
 
 
 
 function cpfb_add_social_networking_links( $field_value ) {
-	global $social_networking_fields;
-	
+	global $bp, $social_networking_fields;
+
 	$bp_this_field_name = bp_get_the_profile_field_name();
 	
 	if ( isset ( $social_networking_fields[$bp_this_field_name] ) ) {
@@ -56,7 +34,7 @@ function cpfb_add_social_networking_links( $field_value ) {
 	
 	return $field_value;
 }
-add_filter( 'bp_get_the_profile_field_value', 'cpfb_add_social_networking_links' );
+add_filter( 'bp_get_the_profile_field_value', 'cpfb_add_social_networking_links', 1 );
 
 
 
@@ -71,5 +49,5 @@ function cpfb_unlink_fields( $field_value ) {
 	return $field_value;
 		
 }
-add_filter( 'bp_get_the_profile_field_value', 'cpfb_unlink_fields', 998 );
+add_filter( 'bp_get_the_profile_field_value', 'cpfb_unlink_fields', 998, 1 );
 ?>

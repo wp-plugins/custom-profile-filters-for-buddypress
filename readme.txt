@@ -23,9 +23,9 @@ This plugin was created as part of the CUNY Academic Commons of the City Univers
 
 == Installation ==
 
-1. Upload `custom-profile-filters-for-buddypress.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress (/wp-admin/)
-1. Edit custom-profile-filters-for-buddypress.php to configure.
+1. Upload the `custom-profile-filters-for-buddypress` directory to your plugins folder
+1. Activate the plugin
+1. Edit custom-profile-filters-for-buddypress.php to configure
 
 
 
@@ -44,3 +44,7 @@ Future features include: admin tab with toggle switch; ability to tweak BP's aut
 = 0.3 =
 * Conforms to BP 1.2 standards for loading order
 * Most functionality moved to proper filters in order to inherit BP native code
+
+= 0.3.1 =
+* Moved globals back to main plugin file
+* Fixed error regarding missing function arguments (thanks for reporting them, Mike!)
