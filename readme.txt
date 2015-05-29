@@ -2,7 +2,7 @@
 Contributors: boonebgorges, cuny-academic-commons
 Tags: buddypress, profile, filter
 Requires at least: WPMu 2.7.1, BuddyPress 1.0
-Tested up to: WPMu 2.9.1.1, BuddyPress 1.2
+Tested up to: WP 4.3, BuddyPress 2.3
 Stable tag: trunk
 
 Allows users to take control of the way that the links in their Buddypress profiles are handled.
@@ -33,18 +33,20 @@ This plugin was created as part of the CUNY Academic Commons of the City Univers
 
 The plugin checks each profile for square brackets and activates if it finds any. If no square brackets are found, the default automatic filter will kick in.
 
-You might want to insert a small explanation into your BP profile edit template (/wp-content/bp-themes/[your-member-theme]/profile/edit.php that tells your site's users how to use these brackets. Here's what I use: 
-	
+You might want to insert a small explanation into your BP profile edit template (/wp-content/bp-themes/[your-member-theme]/profile/edit.php that tells your site's users how to use these brackets. Here's what I use:
+
 "Words or phrases in your profile can be linked to the profiles of other members that contain the same phrases. To specify which words or phrases should be linked, add square brackets: e.g. "I enjoy [English literature] and [technology]." If you do not specify anything, phrases will be chosen automatically."
 
 Future features include: admin tab with toggle switch; ability to tweak BP's automatic profile filter (e.g. to parse semi-colon separated lists in addition to commas).
 
 == Changelog ==
-
-= 0.3 =
-* Conforms to BP 1.2 standards for loading order
-* Most functionality moved to proper filters in order to inherit BP native code
+= 0.4 =
+* Updated for recent versions of BP, WP
 
 = 0.3.1 =
 * Moved globals back to main plugin file
 * Fixed error regarding missing function arguments (thanks for reporting them, Mike!)
+
+= 0.3 =
+* Conforms to BP 1.2 standards for loading order
+* Most functionality moved to proper filters in order to inherit BP native code
